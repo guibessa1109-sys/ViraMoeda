@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Vira_Moeda.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+            <Image
+                Source="euro.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="icone do app" />
+
+            <Label
+                Text="Cara ou Coroa?"
+                FontSize="26"
+                FontFamily="Sans Serif"
+                FontAttributes="Bold"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Escolha um lado da moeda e aperte o botão para sortear"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="info do app" />
+
+            <Picker x:Name="Seletor"
+                    FontAttributes="Bold"
+                    FontSize="20"
+                    Title="Lado da Moeda:">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Cara</x:String>
+                        <x:String>Coroa</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Button
+      x:Name="GirarMoedaButton"
+      Text="Sortear" 
+      Clicked="GirarMoedaButton_Clicked"></Button>
+
+            <Label
+             FontAttributes="Bold"
+             FontSize="25"
+             Text="-------------------------------------------------------------------------------------------------------------------------------------------------------------"
+            ></Label>
+
+            <Label
+                x:Name="VitoriasLabel"
+                FontAttributes="Bold"
+                FontSize="25"
+                Text="Vitórias : 0"
+                ></Label>
+
+            <Label
+                x:Name="DerrotasLabel"
+                FontAttributes="Bold"
+                FontSize="25"
+                Text="Derrotas : 0"
+                ></Label>
+
+            <Label
+                 FontAttributes="Bold"
+                 FontSize="25"
+                 Text="-------------------------------------------------------------------------------------------------------------------------------------------------------------"  
+    ></Label>
+
+            <Label
+                x:Name="ResultadoJogo"
+                FontAttributes="Bold"
+                FontSize="20"
+                Text="Resultado do Sorteio"></Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+   
+
+</ContentPage>
